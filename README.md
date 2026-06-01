@@ -27,7 +27,7 @@ A Flask-based internal IT security monitoring portal built to simulate real ente
 ![Dashboard](screenshots/Dashboard.png)
 
 ### Log Parser — Auto-generated alerts from parsed auth logs
-![Log Parser Alert](screenshots/logparseralert.png)
+![Log Parser Alert](screenshots/logparseralertticket.png)
 
 ### Tickets — Auto-generated ticket from log parser brute force detection
 ![Log Parser Ticket](screenshots/logparseralerttticket.png)
@@ -38,7 +38,7 @@ A Flask-based internal IT security monitoring portal built to simulate real ente
 ## How To Run Locally
 
 ```bash
-git clone https://github.com/YOURUSERNAME/IT-Security-Dashboard
+git clone https://github.com/RafaelRuiz51/IT-Security-Dashboard
 cd IT-Security-Dashboard
 python -m venv venv
 venv\Scripts\activate
