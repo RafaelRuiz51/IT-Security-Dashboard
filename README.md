@@ -20,7 +20,7 @@ A Flask-based internal IT security monitoring portal built to simulate real ente
 
 ### Environment Setup — Python version confirmed and Flask installed
 ![Python Version](screenshots/pythonversion.png)
-![Venv and Flask Installed](screenshots/venvandflaskinstalled.png)
+![Venv and Flask Installed](screenshots/venvandflaskInstalled.png)
 ![Packages Installed](screenshots/packagesinstalled.png)
 
 ### Dashboard — Live security alerts with severity badges
