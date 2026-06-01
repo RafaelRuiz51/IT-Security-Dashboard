@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IT Security Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #0f1117; color: #e0e0e0; font-family: Arial, sans-serif; }
+    .navbar { background-color: #1a1d2e; border-bottom: 1px solid #2a2d3e; }
+    .card { background-color: #1a1d2e; border: 1px solid #2a2d3e; }
+    .stat-card { border-left: 4px solid #e74c3c; }
+    .stat-card.yellow { border-left-color: #f39c12; }
+    .stat-card.blue { border-left-color: #3498db; }
+    .stat-card.green { border-left-color: #2ecc71; }
+    table { color: #e0e0e0; }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-dark px-4 py-3">
+  <span class="navbar-brand fw-bold">🛡️ IT Security Dashboard</span>
+  <div>
+    <a href="/" class="btn btn-sm btn-outline-light me-2">Dashboard</a>
+    <a href="/tickets" class="btn btn-sm btn-outline-light me-2">Tickets</a>
+    <a href="/users" class="btn btn-sm btn-outline-light">Users</a>
+  </div>
+</nav>
+<div class="container-fluid p-4">
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <div class="card stat-card p-3">
+        <div class="text-muted small">HIGH SEVERITY ALERTS</div>
+        <div class="fs-2 fw-bold text-danger">{{ high_count }}</div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card stat-card yellow p-3">
+        <div class="text-muted small">TOTAL ACTIVE ALERTS</div>
+        <div class="fs-2 fw-bold text-warning">{{ total_alerts }}</div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card stat-card blue p-3">
+        <div class="text-muted small">OPEN TICKETS</div>
+        <div class="fs-2 fw-bold text-info">{{ open_tickets }}</div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card stat-card green p-3">
+        <div class="text-muted small">ACTIVE USERS</div>
+        <div class="fs-2 fw-bold text-success">{{ active_users }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="card p-3">
+    <h5 class="mb-3">⚠️ Active Security Alerts</h5>
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr><th>Type</th><th>Message</th><th>Severity</th><th>Time</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        {% for alert in alerts %}
+        <tr>
+          <td>{{ alert[1] }}</td>
+          <td>{{ alert[2] }}</td>
+          <td>
+            {% if alert[3] == 'High' %}<span class="badge bg-danger">High</span>
+            {% elif alert[3] == 'Medium' %}<span class="badge bg-warning text-dark">Medium</span>
+            {% else %}<span class="badge bg-info text-dark">Low</span>{% endif %}
+          </td>
+          <td>{{ alert[4] }}</td>
+          <td><a href="/resolve/{{ alert[0] }}" class="btn btn-sm btn-outline-success">✓ Resolve</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
