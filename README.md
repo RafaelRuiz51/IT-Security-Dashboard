@@ -30,7 +30,7 @@ A Flask-based internal IT security monitoring portal built to simulate real ente
 ![Log Parser Alert](screenshots/logparseralertticket.png)
 
 ### Tickets — Auto-generated ticket from log parser brute force detection
-![Log Parser Ticket](screenshots/logparseralertticketpng)
+![Log Parser Ticket](screenshots/logparseralertticket.png)
 
 ### Tickets Dashboard
 ![Tickets Dashboard](screenshots/ticketsdashboard.png)
